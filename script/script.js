@@ -19,6 +19,7 @@ function toFixedTwo(variable) {
 let totalPrice = innerTextNumberFunction("total-price");
 let finalBill = innerTextNumberFunction("final-price");
 let discount = innerTextNumberFunction("discount-price");
+let finalDiscountAmount;
 
 //using DOM Traversing
 const options = document.getElementsByClassName("option");
@@ -33,7 +34,8 @@ for (let thing of options) {
         const priceNumbered = Number(price);
         const discountNumbered = Number(discount);
         totalPrice = totalPrice + priceNumbered;
-        finalBill = totalPrice - discountNumbered;
+        finalDiscountAmount = (totalPrice * discountNumbered) / 100;
+        finalBill = totalPrice - finalDiscountAmount;
 
         let totalPriceConverted = totalPrice.toFixed(2);
         let finalBillConverted = finalBill.toFixed(2);
@@ -41,6 +43,7 @@ for (let thing of options) {
 
         gettingElement("total-price").innerText = totalPriceConverted;
         gettingElement("final-price").innerText = finalBillConverted;
+        
 
 
         const div = document.createElement("div");
@@ -108,5 +111,38 @@ document.getElementById("clear-btn").addEventListener("click", function () {
     gettingElement("discount-price").innerText = 0;
     gettingElement("final-price").innerText = 0;
     gettingElement("cart-container").innerText = "";
+    totalPrice = 0;
 
 })
+
+
+
+const coupons = [
+    {
+        code: "newBangladesh",
+        discountAmount: 5,
+    },
+    {
+        code: "bangladesh2.0",
+        discountAmount: 10,
+    },
+];
+
+
+document.getElementById("apply-coupon").addEventListener("click", function () {
+    const couponCode = document.getElementById("coupon-input").value;
+    let totalDiscount = 0;
+
+    for (const coupon of coupons) {
+        if (coupon.code === couponCode) {
+            totalDiscount = coupon.discountAmount;
+        }
+    }
+
+     finalDiscountAmount = (totalPrice * parseInt(finalDiscountAmount)) / 100;
+
+     gettingElement("discount-price").innerText = finalDiscountAmount;
+
+    //   document.getElementById("discount-price").innerText = finalDiscountAmount;
+    // discount = totalDiscount;
+});
