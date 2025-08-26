@@ -1,53 +1,47 @@
 //inner text number function
 function innerTextNumberFunction(id) {
-    const innerTextFun = Number(document.getElementById(id).innerText);
-    return innerTextFun;
+  const innerTextFun = Number(document.getElementById(id).innerText);
+  return innerTextFun;
 }
 
 //only getting element function
 function gettingElement(id) {
-    const Text = document.getElementById(id);
-    return Text;
+  const Text = document.getElementById(id);
+  return Text;
 }
 
 //to fixed maker function
 function toFixedTwo(variable) {
-    const fixted = variable.toFixed(2);
-    return fixted;
+  const fixted = variable.toFixed(2);
+  return fixted;
 }
 
 let totalPrice = innerTextNumberFunction("total-price");
 let finalBill = innerTextNumberFunction("final-price");
 let discount = innerTextNumberFunction("discount-price");
-let finalDiscountAmount;
+let finalDiscountAmount = 0;
 
 //using DOM Traversing
 const options = document.getElementsByClassName("option");
 for (let thing of options) {
-    thing.addEventListener("click", function () {
-        const img = thing.parentNode.parentNode.children[0].children[0].src;
+  thing.addEventListener("click", function () {
+    const img = thing.parentNode.parentNode.children[0].children[0].src;
 
-        const title = thing.parentNode.parentNode.children[1].children[0].innerText;
+    const title = thing.parentNode.parentNode.children[1].children[0].innerText;
 
-        const price = thing.parentNode.parentNode.children[1].children[2].children[0].innerText;
+    const price = thing.parentNode.parentNode.children[1].children[2].children[0].innerText;
 
-        const priceNumbered = Number(price);
-        const discountNumbered = Number(discount);
-        totalPrice = totalPrice + priceNumbered;
-        finalDiscountAmount = (totalPrice * discountNumbered) / 100;
-        finalBill = totalPrice - finalDiscountAmount;
+    const priceNumbered = Number(price);
+    totalPrice = totalPrice + priceNumbered;
 
-        let totalPriceConverted = totalPrice.toFixed(2);
-        let finalBillConverted = finalBill.toFixed(2);
-        console.log(totalPrice, finalBill);
+    let totalPriceConverted = totalPrice.toFixed(2);
+    let finalBillConverted = totalPrice.toFixed(2);
 
-        gettingElement("total-price").innerText = totalPriceConverted;
-        gettingElement("final-price").innerText = finalBillConverted;
-        
+    gettingElement("total-price").innerText = totalPriceConverted;
+    gettingElement("final-price").innerText = finalBillConverted;
 
-
-        const div = document.createElement("div");
-        div.innerHTML = `<div class="flex justify-between rounded-lg items-center m-4 p-2 bg-gray-300">
+    const div = document.createElement("div");
+    div.innerHTML = `<div class="flex justify-between rounded-lg items-center m-4 p-2 bg-gray-300">
             <div class="flex items-center h-10">
                 <img class="h-full" src="${img}" alt="">
             </div>
@@ -57,14 +51,11 @@ for (let thing of options) {
             </div>
         </div>
         `;
-        const cartContainer = gettingElement("cart-container");
-        cartContainer.appendChild(div)
-
-
-
-
-    })
+    const cartContainer = gettingElement("cart-container");
+    cartContainer.appendChild(div);
+  });
 }
+
 
 
 
@@ -118,31 +109,30 @@ document.getElementById("clear-btn").addEventListener("click", function () {
 
 
 const coupons = [
-    {
-        code: "newBangladesh",
-        discountAmount: 5,
-    },
-    {
-        code: "bangladesh2.0",
-        discountAmount: 10,
-    },
+  {
+    code: "newBangladesh",
+    discountAmount: 5,
+  },
+  {
+    code: "bangladesh2.0",
+    discountAmount: 10,
+  },
 ];
 
-
 document.getElementById("apply-coupon").addEventListener("click", function () {
-    const couponCode = document.getElementById("coupon-input").value;
-    let totalDiscount = 0;
+  const couponCode = document.getElementById("coupon-input").value;
+  let totalDiscount = 0;
 
-    for (const coupon of coupons) {
-        if (coupon.code === couponCode) {
-            totalDiscount = coupon.discountAmount;
-        }
+  for (const coupon of coupons) {
+    if (coupon.code === couponCode) {
+      totalDiscount = coupon.discountAmount;
     }
+  }
 
-     finalDiscountAmount = (totalPrice * parseInt(finalDiscountAmount)) / 100;
-
-     gettingElement("discount-price").innerText = finalDiscountAmount;
-
-    //   document.getElementById("discount-price").innerText = finalDiscountAmount;
-    // discount = totalDiscount;
+  const discountElement = document.getElementById("discount-price");
+  const discountPrice = (totalPrice * totalDiscount) / 100;
+  finalDiscountAmount = discountPrice;
+  finalBill = totalPrice - finalDiscountAmount;
+  discountElement.innerText = discountPrice;
+  gettingElement("final-price").innerText = finalBill.toFixed(2);
 });
