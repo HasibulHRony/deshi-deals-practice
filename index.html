@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deshi Deals</title>
+    <!-- favicon added -->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <!-- tailwind and daisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-[#f8f8f8]">
+    <header>
+        <!-- navbar section added -->
+        <div class="flex items-center justify-center border-gray-300 border-b-[2px]">
+            <div class="flex items-center p-4">
+                <div class="h-16">
+                    <img class="max-h-full" src="./assets/logo.png" alt="">
+                </div>
+                <div class="ml-4">
+                    <h2 class="text-[#e71580] text-3xl mb-1">
+                        Deshi.<span class="font-bold">Deals</span>
+                    </h2>
+                    <p class="text-[#797075]">
+                        Cheap Price. Best Quality
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- banner section added -->
+        <div
+            class="flex flex-col my-16 p-10 justify-center bg-[linear-gradient(180deg,rgba(255,255,255,1),rgba(246,221,234,1)_100%)]">
+            <div>
+                <h1 class="text-4xl text-center font-semibold mb-4">Purchase TK 200 or above & get<br>
+                    <span class="text-[#e71580] text-5xl font-bold">20% off </span>
+                </h1>
+                <div class="text-center flex items-center justify-center">
+                    <p class="text-2xl mr-4">Use Promo Code</p><button
+                        class="inline-block text-white py-2 px-4 font-semibold rounded-lg bg-[#e71580]">SELL200</button>
+                </div>
+            </div>
+            <div class="max-w-[512px] flex items-center justify-center mx-auto mb-[-124px]">
+                <img class="w-full" src="./assets/hero-bg.png" alt="">
+            </div>
+        </div>
+
+    </header>
+
+
+    <main>
+        <div class="w-11/12 mx-auto grid grid-cols-12 gap-8">
+            <div class="col-span-9">
+                <div>
+                    <h3 class="text-2xl font-semibold">Kitchen Ware</h3>
+                    <div class="grid grid-cols-3 gap-6 my-10">
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img id="spoon-img" src="./assets/kitchen-1.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 id="cart-title">Spoon Set</h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span id="spoon-price">450.40</span> Taka.</p>
+                            </div>
+                            <div class="p-4">
+                                <button id="spoon-btn" class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img src="./assets/kitchen-2.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 class="card-title">Thala Bati</h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span>640.00</span> Taka.</p>
+                            </div>
+                            <div class="p-4">
+                                <button class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img src="./assets/kitchen-3.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 class="card-title">cooker</h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span>790.00</span> Taka</p>
+                            </div>
+                            <div class="p-4">
+                                <button class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold">Sports Ware</h3>
+                    <div class="grid grid-cols-3 gap-6 my-10">
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img src="./assets/sports-1.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 class="card-title">Cap</h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span>50.80</span> Taka.</p>
+                            </div>
+                            <div class="p-4">
+                                <button class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img src="./assets/sports-2.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 class="card-title">Full Jersey Set</h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span>640.00</span> Taka.</p>
+                            </div>
+                            <div class="p-4">
+                                <button class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img src="./assets/sports-3.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 class="card-title">Sports Cates
+                                </h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span>1000.90</span> Taka</p>
+                            </div>
+                            <div class="p-4">
+                                <button class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold">Furniture Ware</h3>
+                    <div class="grid grid-cols-3 gap-6 my-10">
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img src="./assets/furniture-1.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 class="card-title">Relax Chair</h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span>1550.40</span> Taka.</p>
+                            </div>
+                            <div class="p-4">
+                                <button class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img src="./assets/furniture-2.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 class="card-title">children Chair</h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span>880.00</span> Taka.</p>
+                            </div>
+                            <div class="p-4">
+                                <button class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                        <div class="card bg-base-100 shadow-sm">
+                            <figure class="p-6 bg-gray-200 h-48">
+                                <img src="./assets/furniture-3.png" alt="Spoon Set" class="rounded-xl h-full" />
+                            </figure>
+                            <div class="card-body items-center text-center bg-white">
+                                <h2 class="card-title">flexible Sofa</h2>
+                                <p>⭐⭐⭐⭐⭐</p>
+                                <p><span>2990.00</span> Taka</p>
+                            </div>
+                            <div class="p-4">
+                                <button class="option btn btn-wide bg-[#e71580]">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-span-3 p-4">
+
+                <!-- coupon section -->
+                <div class="bg-white">
+                    <h3>Have a Coupon?</h3>
+                    <div>
+                        <div class="join">
+                            <div>
+                                <label class="input validator join-item">
+                                    <input type="text" placeholder="Enter Your Code" />
+                                </label>
+                            </div>
+                            <button class="btn bg-[#e71580] join-item">Join</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- cart container -->
+                <div id="cart-container">
+
+                </div>
+
+                <!-- total price section -->
+                 <div class="border-b-2 border-t-2 my-4 border-gray-300 bg-white p-4">
+                    <p class="text-lg">Total Price: <span id="total-price">0</span> TK</p>
+                    <p class="text-lg">Discount: <span id="discount-price">0</span> TK</p>
+                    <p class="text-lg">Final bill: <span id="final-price">0</span> TK</p>
+                 </div>
+
+                 <!-- clear all btn -->
+                  <div>
+                    <button id="clear-btn" class="btn btn-wide bg-gray-300 mb-4">Clear All</button>
+                  </div>
+
+                 <!-- make purchase button -->
+                  <div>
+                    <button class="btn btn-wide bg-[#e71580]">Make Purchase</button>
+                  </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
